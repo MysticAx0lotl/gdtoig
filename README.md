@@ -3,16 +3,16 @@ This is a proof-of-concept of  a tool that converts Geometry Dash level data to 
 
 Only a few object IDs are defined, therefore **most levels will not convert properly**. The Impossible Game also doesn't support object rotation, and its color triggers are extremely limited. Obviously GD-specific mechanics such as portals, orbs, and pads aren't and will never be supported.
 
-Do also note that Impossible Game's scroll speed and jump height are both very different to GD, therefore you will most definitely need to manually edit the generated level if you want anything remotely playable. IG also seems to have either an xpos limit or object limit *much* smaller than GD's, so a lot of longer levels will crash the game (even if they open properly in the editor).
+Do also note that Impossible Game's scroll speed and jump height are both very different to GD, therefore you will absolutely need to edit the generated level if you want anything remotely playable (it also most likely won't sync). IG also seems to have either an xpos limit or object limit *much* smaller than GD's, so a lot of longer levels will crash the game (even if they open properly in the editor).
 
 Fade transitions and color changes are currently unimplemented but are planned.
 
 ## Usage
 Take a **fully decoded** Geometry Dash level string, and place it in a plaintext file on line 1. Then run the following
 
-    gdtoig yourfile.txt
+    ./gdtoig yourfile.txt
    
-  where "yourfile.txt" is whatever file you placed the GD level file in. The program will then output an Impossible Game level folder with the same name.
+  where "yourfile.txt" is whatever file you placed the GD level data in. The program will then output an Impossible Game level folder with the same name.
 
 ## Compiling
 Simply run `make` in the same directory as the Makefile
